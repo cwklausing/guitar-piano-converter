@@ -1,1 +1,103 @@
+/*CSS Reset*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, footer, header,
+menu, nav, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Begin Custom CSS */
+
+.header {
+	background-color: #388ab3;
+	padding: 2rem;
+}
+
+.header__title {
+	font-size: 3rem;
+	text-align: center;
+}
+
+/* App Container */
+.app-main {
+	margin: 0 auto;
+	width: 90%;
+}
+
+/* Guitar */
+.guitar-neck {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	background-color: #38190c;
+	height: 200px;
+	width: 100%;
+}
+
+.guitar-string {
+	background-color: silver;
+	position: relative;
+	width: 100%;
+}
+
+.guitar-string:nth-of-type(1) {
+	height: 2px;
+}
+
+.guitar-string:nth-of-type(2) {
+	height: 3px;
+}
+
+.guitar-string:nth-of-type(3) {
+	height: 4px;
+}
+
+.guitar-string:nth-of-type(4) {
+	height: 5px;
+}
+
+.guitar-string:nth-of-type(5) {
+	height: 6px;
+}
+
+.guitar-string:nth-of-type(6) {
+	height: 7px;
+}
+
+/* Piano */
+
+
+
+
+
+
+
+
 

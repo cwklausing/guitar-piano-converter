@@ -3,7 +3,7 @@ import Menu from './Menu';
 
 function Header(props) {
 	return (
-		<header class="header">
+		<header className="header">
 			<h1 className="header__title">Guitar To Piano Converter</h1>
 			<Menu />
 		</header>
