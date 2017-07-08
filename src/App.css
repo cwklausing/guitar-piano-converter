@@ -53,12 +53,23 @@ table {
 
 /* Guitar */
 .guitar-neck {
+	background-color: #38190c;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	background-color: #38190c;
+	position: relative;
 	height: 200px;
 	width: 100%;
+}
+
+.guitar-neck:before {
+	background-color: #fff;
+	border: 1px solid gray;
+	content: ' ';
+	display: block;
+	position: absolute;
+	height: 100%;
+	width: 3%;
 }
 
 .guitar-string {
