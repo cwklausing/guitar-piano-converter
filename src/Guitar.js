@@ -10,12 +10,21 @@ class Guitar extends React.Component {
 	}
 
 	render() {
-		const strings = this.props.guitar;
-		console.log(strings);
+		const guitar = this.props.guitar;
+		const strings = guitar.map((string, index) => {
+			const frets = string.frets.map((value, index) => {
+				return <div className={'fret-' + index} key={index} />;
+			});
+			return (
+				<div className={'string-' + index} key={index}>
+					{frets}
+				</div>
+			);
+		});
 		return (
 			<div className="guitar">
 				<div className="guitar-neck">
-					{}
+					{strings}
 				</div>
 			</div>
 		);

@@ -6,18 +6,36 @@ import './App.css';
 
 class App extends Component {
 	constructor() {
-		const fretNumber = 10;
+		const fretsNumber = 10;
 
 		super();
 		this.state = {
-			guitar: {
-				E1: Array(fretNumber).fill(null),
-				A: Array(fretNumber).fill(null),
-				D: Array(fretNumber).fill(null),
-				G: Array(fretNumber).fill(null),
-				B: Array(fretNumber).fill(null),
-				E2: Array(fretNumber).fill(null)
-			}
+			guitar: [
+				{
+					string: 'E1',
+					frets: Array(fretsNumber).fill(null)
+				},
+				{
+					string: 'A',
+					frets: Array(fretsNumber).fill(null)
+				},
+				{
+					string: 'D',
+					frets: Array(fretsNumber).fill(null)
+				},
+				{
+					string: 'G',
+					frets: Array(fretsNumber).fill(null)
+				},
+				{
+					string: 'B',
+					frets: Array(fretsNumber).fill(null)
+				},
+				{
+					string: 'E2',
+					frets: Array(fretsNumber).fill(null)
+				}
+			]
 		};
 	}
 
