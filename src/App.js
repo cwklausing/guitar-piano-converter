@@ -10,6 +10,7 @@ class App extends Component {
 
 		super();
 		this.state = {
+			fretImages: Array(fretsNumber - 1).fill(null),
 			notes: [
 				Array(fretsNumber).fill(null),
 				Array(fretsNumber).fill(null),
@@ -26,7 +27,7 @@ class App extends Component {
 			<div className="App">
 				<Header />
 				<main className="app-main">
-					<Guitar notes={this.state.notes} />
+					<Guitar notes={this.state.notes} fretImages={this.state.fretImages} />
 					<Piano />
 				</main>
 			</div>
