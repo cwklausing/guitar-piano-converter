@@ -33,7 +33,13 @@ table {
 	border-spacing: 0;
 }
 
-/* Begin Custom CSS */
+/*
+*
+*
+* Begin Custom CSS 
+*
+*
+*/
 
 .header {
 	background-color: #388ab3;
@@ -41,19 +47,20 @@ table {
 }
 
 .header__title {
-	font-size: 3rem;
+	font-size: 2rem;
 	text-align: center;
 }
 
 /* App Container */
 .app-main {
 	margin: 2rem auto;
-	width: 80%;
+	width: 95%;
 }
 
 /* Guitar */
 .guitar {
 	border: 1px solid #38190c;
+	height: 150px;
 	position: relative;
 	margin-bottom: 2rem;
 }
@@ -63,7 +70,7 @@ table {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	height: 200px;
+	height: 100%;
 	width: 100%;
 }
 
@@ -154,7 +161,7 @@ table {
 	display: flex;
 	position: relative;
 	margin-bottom: 2rem;
-	height: 200px;
+	height: 100px;
 	width: 100%;
 }
 
@@ -197,4 +204,70 @@ table {
 	top: 0;
 	height: 95%;
 	width: 100%;
+}
+
+
+/*
+* Media XS
+*/
+@media only screen and (min-width:400px) {
+	.guitar {
+		height: 170px;
+	}
+
+	.piano {
+		height: 120px;
+	}
+}
+
+/*
+* Media SM
+*/
+@media only screen and (min-width:600px) {
+	.app-main {
+		width: 90%;
+	}
+	
+	.header__title {
+		font-size: 3rem;
+	}
+
+	.guitar {
+		height: 200px;
+	}
+
+	.piano {
+		height: 160px;
+	}
+
+}
+
+/*
+* Media MD
+*/
+@media only screen and (min-width:800px) {
+	.piano {
+		height: 180px;
+	}
+}
+
+/*
+* Media LG
+*/
+@media only screen and (min-width:900px) {
+	.piano {
+		height: 200px;
+	}
+}
+
+/*
+* Media XL
+*/
+@media only screen and (min-width:1000px) {
+	.app-main {
+		width: 900px;
+	}
+	.piano {
+		height: 225px;
+	}
 }
