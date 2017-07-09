@@ -6,35 +6,17 @@ import './App.css';
 
 class App extends Component {
 	constructor() {
-		const fretsNumber = 10;
+		const fretsNumber = 5;
 
 		super();
 		this.state = {
-			guitar: [
-				{
-					string: 'E1',
-					frets: Array(fretsNumber).fill(null)
-				},
-				{
-					string: 'A',
-					frets: Array(fretsNumber).fill(null)
-				},
-				{
-					string: 'D',
-					frets: Array(fretsNumber).fill(null)
-				},
-				{
-					string: 'G',
-					frets: Array(fretsNumber).fill(null)
-				},
-				{
-					string: 'B',
-					frets: Array(fretsNumber).fill(null)
-				},
-				{
-					string: 'E2',
-					frets: Array(fretsNumber).fill(null)
-				}
+			notes: [
+				Array(fretsNumber).fill(null),
+				Array(fretsNumber).fill(null),
+				Array(fretsNumber).fill(null),
+				Array(fretsNumber).fill(null),
+				Array(fretsNumber).fill(null),
+				Array(fretsNumber).fill(null)
 			]
 		};
 	}
@@ -44,7 +26,7 @@ class App extends Component {
 			<div className="App">
 				<Header />
 				<main className="app-main">
-					<Guitar guitar={this.state.guitar} />
+					<Guitar notes={this.state.notes} />
 					<Piano />
 				</main>
 			</div>

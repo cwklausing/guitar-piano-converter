@@ -2,14 +2,13 @@ import React from 'react';
 
 class Guitar extends React.Component {
 	render() {
-		const guitar = this.props.guitar;
-		const strings = guitar.map((string, index) => {
-			const frets = string.frets.map((value, index) => {
+		const guitar = this.props.notes;
+		const strings = guitar.map((row, index) => {
+			const frets = row.map((value, index) => {
 				return <div className={'fret fret-' + index} key={index} />;
 			});
 			return (
 				<div className={'string string-' + index} key={index}>
-					<div className="string-image" />
 					{frets}
 				</div>
 			);
