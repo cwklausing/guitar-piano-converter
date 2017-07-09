@@ -28,7 +28,7 @@ class App extends Component {
 				<Header />
 				<main className="app-main">
 					<Guitar notes={this.state.notes} fretImages={this.state.fretImages} />
-					<Piano />
+					<Piano notes={this.state.notes} />
 				</main>
 			</div>
 		);

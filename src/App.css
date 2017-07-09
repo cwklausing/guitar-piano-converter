@@ -47,14 +47,15 @@ table {
 
 /* App Container */
 .app-main {
-	margin: 0 auto;
-	width: 90%;
+	margin: 2rem auto;
+	width: 80%;
 }
 
 /* Guitar */
 .guitar {
 	border: 1px solid #38190c;
 	position: relative;
+	margin-bottom: 2rem;
 }
 
 .guitar-neck {
@@ -92,7 +93,7 @@ table {
 }
 
 .string:nth-of-type(1):before {
-	height: 2px;
+	height: 3px;
 }
 
 .string:nth-of-type(2):before {
@@ -104,15 +105,15 @@ table {
 }
 
 .string:nth-of-type(4):before {
-	height: 5px;
+	height: 4px;
 }
 
 .string:nth-of-type(5):before {
-	height: 6px;
+	height: 5px;
 }
 
 .string:nth-of-type(6):before {
-	height: 7px;
+	height: 6px;
 }
 
 .fret {
@@ -149,12 +150,51 @@ table {
 }
 
 /* Piano */
+.piano {
+	display: flex;
+	position: relative;
+	margin-bottom: 2rem;
+	height: 200px;
+	width: 100%;
+}
 
+.key {
+	display: inline-block;
+}
 
+.key-white {
+	border: 1px solid black;
+	border-right: none;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	height: 100%;
+	width: calc(100%/18);
+}
 
+.key-white:last-of-type {
+	border-right: 1px solid black;
+}
 
+.key-black {
+	background-color: #444;
+	border: 1px solid black;
+	border-top: none;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	height: 65%;
+	margin: 0 -1.5% 0 -1.5%;
+	position: relative;
+	width: calc(100%/35);
+}
 
-
-
-
-
+.key-black:before {
+	content: ' ';
+	display: block;
+	background-color: #222;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	position: absolute;
+	top: 0;
+	height: 95%;
+	width: 100%;
+}
