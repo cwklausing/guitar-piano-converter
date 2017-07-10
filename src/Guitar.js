@@ -3,8 +3,13 @@ import React from 'react';
 function Guitar(props) {
 	const notes = props.notes;
 	const strings = notes.map((row, index) => {
+		const rowNum = index;
 		const frets = row.map((value, index) => {
-			return <div className={'fret fret-' + index} key={index} />;
+			return (
+				<div className={'fret fret-' + index} key={index} onClick={() => props.onClick(rowNum, index)}>
+					<div className="active-dot" />
+				</div>
+			);
 		});
 		return (
 			<div className={'string string-' + index} key={index}>

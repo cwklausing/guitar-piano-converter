@@ -21,13 +21,34 @@ class App extends Component {
 			]
 		};
 	}
+	handleClick(rowNumber, noteNumber) {
+		const notes = this.state.notes;
+		const row = notes[rowNumber];
+
+		if (row[noteNumber] === null) {
+			row.fill(null);
+			row[noteNumber] = 'active';
+		} else {
+			row.fill(null);
+		}
+
+		this.setState({
+			notes: notes
+		});
+
+		console.log(this.state.notes);
+	}
 
 	render() {
 		return (
 			<div className="App">
 				<Header />
 				<main className="app-main">
-					<Guitar notes={this.state.notes} fretImages={this.state.fretImages} />
+					<Guitar
+						notes={this.state.notes}
+						fretImages={this.state.fretImages}
+						onClick={(rowNumber, noteNumber) => this.handleClick(rowNumber, noteNumber)}
+					/>
 					<Piano notes={this.state.notes} />
 				</main>
 			</div>
