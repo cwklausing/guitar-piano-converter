@@ -68,7 +68,7 @@ table {
 .guitar-neck {
 	background-color: #38190c;
 	display: flex;
-	flex-direction: column;
+	flex-direction: column-reverse;
 	justify-content: space-around;
 	height: 100%;
 	width: 100%;
@@ -200,17 +200,18 @@ table {
 	display: inline-block;
 }
 
+.key.active {
+	background-color: #00a6e5;
+}
+
 .key-white {
+	background-color: white;
 	border: 1px solid black;
 	border-right: none;
 	border-bottom-left-radius: 2px;
 	border-bottom-right-radius: 2px;
 	height: 100%;
 	width: calc(100%/18);
-}
-
-.key-white:last-of-type {
-	border-right: 1px solid black;
 }
 
 .key-black {
@@ -237,6 +238,17 @@ table {
 	width: 100%;
 }
 
+.key-black.active:before {
+	background-color: #006186;
+}
+
+.key-num-19 {
+	display: none;
+}
+
+.key-num-28 {
+	border-right: 1px solid black;
+}
 
 /*
 * Media XS
