@@ -1,6 +1,7 @@
 import React from 'react';
 
 function Piano(props) {
+	const instrument = 'piano';
 	const notes = props.notes;
 	const whiteKeys = [0, 1, 3, 5, 7, 8, 10, 12, 13, 15, 17, 19, 20, 21, 23, 25, 26, 28, 30, 32];
 	const findKeyColor = keyNumber => {
@@ -13,7 +14,7 @@ function Piano(props) {
 	};
 	const keys = notes.map((section, sectionIndex) => {
 		const sectionOffset = sectionIndex * 5;
-		const keySection = section.map((value, keyIndex) => {
+		const keySection = section.map((i, keyIndex) => {
 			const currentNote = notes[sectionIndex][keyIndex];
 			const keyNumber = keyIndex + sectionOffset;
 			var keyClass =
@@ -28,7 +29,13 @@ function Piano(props) {
 				}
 			}
 
-			return <div className={keyClass} key={keyIndex} />;
+			return (
+				<div
+					className={keyClass}
+					key={keyIndex}
+					onClick={() => props.onClick(sectionIndex, keyIndex, instrument)}
+				/>
+			);
 		});
 		return keySection;
 	});

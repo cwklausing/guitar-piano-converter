@@ -21,11 +21,23 @@ class App extends Component {
 			]
 		};
 	}
-	handleClick(rowNumber, noteNumber) {
+	handleClick(rowNumber, noteNumber, instrument) {
 		const notes = this.state.notes;
 		const row = notes[rowNumber];
 
-		if (row[noteNumber] === null) {
+		if (
+			instrument === 'piano' &&
+			(rowNumber === 4 && noteNumber === 0) &&
+			(notes[4][0] === 'active' || notes[3][4] === 'active')
+		) {
+			// Account for double B notes on guitar
+			if (notes[4][0] === 'active') {
+				notes[4].fill(null);
+			}
+			if (notes[3][4] === 'active') {
+				notes[3].fill(null);
+			}
+		} else if (row[noteNumber] === null) {
 			row.fill(null);
 			row[noteNumber] = 'active';
 		} else {
@@ -45,9 +57,14 @@ class App extends Component {
 					<Guitar
 						notes={this.state.notes}
 						fretImages={this.state.fretImages}
-						onClick={(rowNumber, noteNumber) => this.handleClick(rowNumber, noteNumber)}
+						onClick={(rowNumber, noteNumber, instrument) =>
+							this.handleClick(rowNumber, noteNumber, instrument)}
 					/>
-					<Piano notes={this.state.notes} />
+					<Piano
+						notes={this.state.notes}
+						onClick={(rowNumber, noteNumber, instrument) =>
+							this.handleClick(rowNumber, noteNumber, instrument)}
+					/>
 				</main>
 			</div>
 		);

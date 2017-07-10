@@ -1,6 +1,7 @@
 import React from 'react';
 
 function Guitar(props) {
+	const instrument = 'guitar';
 	const notes = props.notes;
 	const strings = notes.map((row, index) => {
 		const rowNum = index;
@@ -12,7 +13,7 @@ function Guitar(props) {
 			}
 
 			return (
-				<div className={fretClass} key={index} onClick={() => props.onClick(rowNum, index)}>
+				<div className={fretClass} key={index} onClick={() => props.onClick(rowNum, index, instrument)}>
 					<div className="dot" />
 				</div>
 			);
