@@ -5,9 +5,15 @@ function Guitar(props) {
 	const strings = notes.map((row, index) => {
 		const rowNum = index;
 		const frets = row.map((value, index) => {
+			var fretClass = 'fret fret-' + index;
+
+			if (notes[rowNum][index] === 'active') {
+				fretClass += ' active';
+			}
+
 			return (
-				<div className={'fret fret-' + index} key={index} onClick={() => props.onClick(rowNum, index)}>
-					<div className="active-dot" />
+				<div className={fretClass} key={index} onClick={() => props.onClick(rowNum, index)}>
+					<div className="dot" />
 				</div>
 			);
 		});
@@ -17,9 +23,11 @@ function Guitar(props) {
 			</div>
 		);
 	});
+
 	const frets = props.fretImages.map((value, index) => {
 		return <div className={'fret-image fret-image-' + index} key={index} />;
 	});
+
 	return (
 		<div className="guitar">
 			<div className="fret-images">

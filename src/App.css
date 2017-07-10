@@ -92,7 +92,7 @@ table {
 .string:before {
 	content: '';
 	display: block;
-    background: linear-gradient(180deg, #4c4c4c, #cecece);;
+    background: linear-gradient(0deg, #6d4f1a, #efd6ab);
 	position: absolute;
     top: 50%;
     width: 100%;
@@ -125,12 +125,43 @@ table {
 
 .fret {
 	display: inline-block;
+	position: relative;
 	height: 100%;
 	width: calc(97%/4);
 }
 
 .fret:first-of-type {
 	width: 3%;
+}
+
+.dot {
+	background-color: #f7931e;
+	border: 2px solid white;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 25px;
+	width: 25px;
+	transform-origin: 0% 0%;
+	transform:
+		scale(0,0)
+		translateX(-50%)
+		translateY(-50%);
+	transition:
+		transform 100ms ease-in-out;
+}
+
+.fret:first-of-type .dot {
+	background-color: transparent;
+	border: 2px solid black;
+}
+
+.fret.active .dot {
+	transform:
+		scale(1,1)
+		translateX(-50%)
+		translateY(-50%);
 }
 
 .fret-image {

@@ -35,8 +35,6 @@ class App extends Component {
 		this.setState({
 			notes: notes
 		});
-
-		console.log(this.state.notes);
 	}
 
 	render() {
