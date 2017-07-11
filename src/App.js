@@ -9,7 +9,11 @@ class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			notes: Array(6).fill(null)
+			notes: Array(6).fill(null),
+			selectedChord: {
+				root: false,
+				type: false
+			}
 		};
 	}
 
@@ -34,10 +38,67 @@ class App extends Component {
 		});
 	}
 
+	handleClear() {
+		this.setState({
+			notes: Array(6).fill(null),
+			selectedChord: {
+				root: false,
+				type: false
+			}
+		});
+	}
+
+	handleSelect(event) {
+		const name = event.target.name;
+		var value = event.target.value;
+		const selectedChord = this.state.selectedChord;
+
+		if (value === 'false') {
+			value = false;
+		}
+
+		if (name === 'chord-roots') {
+			selectedChord.root = value;
+		} else {
+			selectedChord.type = value;
+		}
+
+		this.setState({
+			selectedChord: selectedChord
+		});
+
+		this.setSelectedChord();
+	}
+
+	setSelectedChord() {
+		const selectedRoot = this.state.selectedChord.root;
+		const selectedType = this.state.selectedChord.type;
+		const chords = chordData.chords;
+		var notes = this.state.notes;
+
+		if (selectedRoot && selectedType) {
+			for (let i = 0; i < chords.length; i++) {
+				if (selectedRoot === chords[i].root && chords[i].type[selectedType] !== undefined) {
+					notes = chords[i].type[selectedType];
+				}
+			}
+		}
+
+		this.setState({
+			notes: notes
+		});
+	}
+
 	render() {
 		return (
 			<div className="App">
-				<Header notes={this.state.notes} chordData={chordData} />
+				<Header
+					notes={this.state.notes}
+					chordData={chordData}
+					onChange={event => this.handleSelect(event)}
+					onClick={() => this.handleClear()}
+					selectedChord={this.state.selectedChord}
+				/>
 				<main className="app-main">
 					<Guitar
 						notes={this.state.notes}
