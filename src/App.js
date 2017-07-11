@@ -6,42 +6,35 @@ import './App.css';
 
 class App extends Component {
 	constructor() {
-		const fretsNumber = 5;
-
 		super();
 		this.state = {
-			fretImages: Array(fretsNumber - 1).fill(null),
-			notes: [
-				Array(fretsNumber).fill(null),
-				Array(fretsNumber).fill(null),
-				Array(fretsNumber).fill(null),
-				Array(fretsNumber).fill(null),
-				Array(fretsNumber).fill(null),
-				Array(fretsNumber).fill(null)
-			]
+			// fretImages: Array(4).fill(null),
+			// notes: [
+			// 	Array(5).fill(null),
+			// 	Array(5).fill(null),
+			// 	Array(5).fill(null),
+			// 	Array(5).fill(null),
+			// 	Array(5).fill(null),
+			// 	Array(5).fill(null)
+			// ],
+			notes: Array(6).fill(null)
 		};
 	}
-	handleClick(rowNumber, noteNumber, instrument) {
-		const notes = this.state.notes;
-		const row = notes[rowNumber];
 
-		if (
-			instrument === 'piano' &&
-			(rowNumber === 4 && noteNumber === 0) &&
-			(notes[4][0] === 'active' || notes[3][4] === 'active')
-		) {
+	handleClick(stringNumber, noteNumber, instrument) {
+		const notes = this.state.notes;
+		if (instrument === 'piano' && (stringNumber === 4 && noteNumber === 0) && (notes[4] === 0 || notes[3] === 4)) {
 			// Account for double B notes on guitar
-			if (notes[4][0] === 'active') {
-				notes[4].fill(null);
+			if (notes[4] === 0) {
+				notes[4] = null;
 			}
-			if (notes[3][4] === 'active') {
-				notes[3].fill(null);
+			if (notes[3] === 4) {
+				notes[3] = null;
 			}
-		} else if (row[noteNumber] === null) {
-			row.fill(null);
-			row[noteNumber] = 'active';
+		} else if (notes[stringNumber] === noteNumber) {
+			notes[stringNumber] = null;
 		} else {
-			row.fill(null);
+			notes[stringNumber] = noteNumber;
 		}
 
 		this.setState({
@@ -56,7 +49,7 @@ class App extends Component {
 				<main className="app-main">
 					<Guitar
 						notes={this.state.notes}
-						fretImages={this.state.fretImages}
+						// fretImages={this.state.fretImages}
 						onClick={(rowNumber, noteNumber, instrument) =>
 							this.handleClick(rowNumber, noteNumber, instrument)}
 					/>
