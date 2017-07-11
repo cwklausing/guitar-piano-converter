@@ -1,6 +1,6 @@
 {
-  "short_name": "Guitar To Piano",
-  "name": "A Guitar To Piano Converter",
+  "short_name": "Guitar/Piano Converter",
+  "name": "A Guitar And Piano Converter",
   "icons": [
     {
       // "src": "favicon.ico",
