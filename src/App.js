@@ -8,15 +8,6 @@ class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			// fretImages: Array(4).fill(null),
-			// notes: [
-			// 	Array(5).fill(null),
-			// 	Array(5).fill(null),
-			// 	Array(5).fill(null),
-			// 	Array(5).fill(null),
-			// 	Array(5).fill(null),
-			// 	Array(5).fill(null)
-			// ],
 			notes: Array(6).fill(null)
 		};
 	}
@@ -49,7 +40,6 @@ class App extends Component {
 				<main className="app-main">
 					<Guitar
 						notes={this.state.notes}
-						// fretImages={this.state.fretImages}
 						onClick={(rowNumber, noteNumber, instrument) =>
 							this.handleClick(rowNumber, noteNumber, instrument)}
 					/>
