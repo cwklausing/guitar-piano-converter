@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Guitar from './Guitar';
 import Piano from './Piano';
+import chordData from './data/chords.json';
 import './App.css';
 
 class App extends Component {
@@ -31,13 +32,12 @@ class App extends Component {
 		this.setState({
 			notes: notes
 		});
-		console.log(this.state.notes);
 	}
 
 	render() {
 		return (
 			<div className="App">
-				<Header />
+				<Header notes={this.state.notes} chordData={chordData} />
 				<main className="app-main">
 					<Guitar
 						notes={this.state.notes}

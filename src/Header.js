@@ -5,7 +5,7 @@ function Header(props) {
 	return (
 		<header className="header">
 			<h1 className="header__title">Guitar To Piano Converter</h1>
-			<Menu />
+			<Menu notes={props.notes} chordData={props.chordData} />
 		</header>
 	);
 }
