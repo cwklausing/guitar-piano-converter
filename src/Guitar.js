@@ -4,7 +4,6 @@ function Guitar(props) {
 	const instrument = 'guitar';
 	const notes = props.notes;
 	const guitarArray = Array(5).fill(null);
-	const fretArray = Array(4).fill(null);
 
 	const strings = notes.map((row, rowIndex) => {
 		const frets = guitarArray.map((value, index) => {
@@ -27,7 +26,7 @@ function Guitar(props) {
 		);
 	});
 
-	const frets = fretArray.map((value, index) => {
+	const frets = guitarArray.map((value, index) => {
 		return <div className={'fret-image fret-image-' + index} key={index} />;
 	});
 
