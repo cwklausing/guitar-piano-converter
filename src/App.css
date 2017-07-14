@@ -360,6 +360,7 @@ h6 {
 
 	.chord-picker {
 		order: 0;
+    	margin: 0;
     	min-width: 20rem;
 	    width: auto;
 	}
