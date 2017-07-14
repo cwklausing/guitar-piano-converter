@@ -41,19 +41,89 @@ table {
 *
 */
 
-.header {
-	background-color: #388ab3;
-	padding: 2rem;
+body {
+	font-family: 'Open sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Poppins, serif;
+	line-height: 1.3;
 }
 
 .header__title {
+	background-color: #388ab3;
+	color: white;
 	font-size: 2rem;
+	letter-spacing: 1px;
 	text-align: center;
+	padding: 1rem 0;
+}
+
+.menu {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	color: white;
+	padding: 1.5rem;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.menu select,
+.menu button {
+	background-color: #eee;
+	-webkit-appearance: none;
+	border: none;
+    border-right: 1px solid gray;
+    border-radius: 0px;
+	font-size: 1.2rem;
+	padding: 5px 10px;
+}
+
+.menu select:first-of-type {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.menu button {
+	background-color: #e86666;
+	border-right: none;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.menu-wrap {
+	background-color: #444;
+	box-shadow: inset 2px -1px 23px -5px black;
+}
+
+.menu__description {
+	order: 1;
+	font-family: 'Open sans', sans-serif;
+	font-size: 1.2rem;
+	width: 100%;
+}
+
+.chord-picker {
+	order: 2;
+	margin: 1rem 0 0;
+	text-align: center;
+	width: 100%;
+}
+
+.chord-picker__wrap {
+	display: inline-block;
 }
 
 /* App Container */
 .app-main {
 	margin: 2rem auto;
+	max-width: 900px;
 	width: 95%;
 }
 
@@ -280,7 +350,18 @@ table {
 	}
 	
 	.header__title {
-		font-size: 3rem;
+		font-size: 2.4rem;
+		padding: 1.5rem 0;
+	}
+
+	.menu {
+		flex-wrap: nowrap;
+	}
+
+	.chord-picker {
+		order: 0;
+    	min-width: 20rem;
+	    width: auto;
 	}
 
 	.guitar {
@@ -324,9 +405,6 @@ table {
 * Media XL
 */
 @media only screen and (min-width:1000px) {
-	.app-main {
-		width: 900px;
-	}
 	.piano {
 		height: 225px;
 	}

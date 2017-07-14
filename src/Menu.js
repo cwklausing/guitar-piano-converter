@@ -11,18 +11,26 @@ function Menu(props) {
 	});
 
 	return (
-		<nav className="menu">
-			<h2>Pick A Chord</h2>
-			<select name="chord-roots" value={props.selectedChord.root} onChange={props.onChange}>
-				<option value={false} />
-				{chordRoots}
-			</select>
-			<select name="chord-types" value={props.selectedChord.type} onChange={props.onChange}>
-				<option value={false} />
-				{chordVariations}
-			</select>
-			<button className="button-clear" onClick={props.onClick}>Clear</button>
-		</nav>
+		<section className="menu-wrap">
+			<div className="menu">
+				<div className="chord-picker">
+					<div className="chord-picker__wrap">
+						<select name="chord-roots" value={props.selectedChord.root} onChange={props.onChange}>
+							<option value={false}>Key</option>
+							{chordRoots}
+						</select>
+						<select name="chord-types" value={props.selectedChord.type} onChange={props.onChange}>
+							<option value={false}>Chord Type</option>
+							{chordVariations}
+						</select>
+						<button className="button-clear" onClick={props.onClick}>Clear</button>
+					</div>
+				</div>
+				<h2 className="menu__description">
+					Click on the piano or guitar to see a conversion to the other instrument, or just pick a chord below!
+				</h2>
+			</div>
+		</section>
 	);
 }
 
