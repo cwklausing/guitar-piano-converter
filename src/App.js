@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import Menu from './Menu';
 import Guitar from './Guitar';
 import Piano from './Piano';
 import chordData from './data/chords.json';
@@ -10,6 +11,7 @@ class App extends Component {
 		super();
 		this.state = {
 			notes: Array(6).fill(null),
+			menuOpen: true,
 			selectedChord: {
 				root: false,
 				type: false
@@ -35,6 +37,12 @@ class App extends Component {
 
 		this.setState({
 			notes: notes
+		});
+	}
+
+	handleMenuClick() {
+		this.setState({
+			menuOpen: !this.state.menuOpen
 		});
 	}
 
@@ -90,13 +98,16 @@ class App extends Component {
 	}
 
 	render() {
+		const menuClass = this.state.menuOpen ? '' : ' menu-closed';
 		return (
-			<div className="App">
-				<Header
+			<div className={'App' + menuClass}>
+				<Header onMenuClick={() => this.handleMenuClick()} />
+				<Menu
 					notes={this.state.notes}
 					chordData={chordData}
 					onChange={event => this.handleSelect(event)}
 					onClick={() => this.handleClear()}
+					menuOpen={this.state.menuOpen}
 					selectedChord={this.state.selectedChord}
 				/>
 				<main className="app-main">

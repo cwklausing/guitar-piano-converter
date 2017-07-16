@@ -55,18 +55,28 @@ h6 {
 	line-height: 1.3;
 }
 
+.app-main {
+	transform: translateY(0px);
+	transition:
+		transform 600ms cubic-bezier(0.29, 0.69, 0.34, 0.99);
+}
+
+.menu-closed .app-main {
+	transform: translateY(-200px);
+}
+
 .header__banner {
+	background-color: #388ab3;
 	position: relative;
+    padding: 1rem 5rem 1rem 1rem;
 	z-index: 1;
 }
 
 .header__title {
-	background-color: #388ab3;
 	color: white;
-	font-size: 2rem;
+	font-size: 1.5rem;
+    text-align: left;
 	letter-spacing: 1px;
-	text-align: center;
-	padding: 1rem 0;
 }
 
 .menu-wrap {
@@ -76,7 +86,7 @@ h6 {
 		transform 600ms cubic-bezier(0.29, 0.69, 0.34, 0.99);
 }
 
-.menu-wrap.collapse {
+.menu-closed .menu-wrap {
 	transform: translateY(-100%);
 }
 
@@ -91,12 +101,45 @@ h6 {
 }
 
 .menu-button {
-	border: 1px solid black;
 	position: absolute;
-	bottom: -50px;
-	right: 20px;
-	height: 30px;
-	width: 30px;
+	bottom: 1rem;
+	right: 10px;
+	height: 60px;
+	width: 60px;
+	transform: translateY(93px);
+	transition:
+		transform 600ms cubic-bezier(0.29, 0.69, 0.34, 0.99);
+}
+
+.menu-closed .menu-button {
+	transform: translateY(0px);
+}
+
+.menu-closed .menu-button .icon-angle-down {
+	transform: rotateX(0deg);
+}
+
+.menu-button:hover {
+	cursor: pointer;
+}
+
+.menu__description {
+	order: 1;
+	font-family: 'Open sans', sans-serif;
+	font-size: 1.2rem;
+	padding-right: 3.5rem;
+	width: 100%;
+}
+
+.chord-picker {
+	order: 2;
+	margin: 1rem 0 0;
+	text-align: center;
+	width: 100%;
+}
+
+.chord-picker__wrap {
+	display: inline-block;
 }
 
 .menu select,
@@ -122,22 +165,14 @@ h6 {
 	border-bottom-right-radius: 5px;
 }
 
-.menu__description {
-	order: 1;
-	font-family: 'Open sans', sans-serif;
-	font-size: 1.2rem;
+.icon-angle-down {
+	fill: white;
 	width: 100%;
-}
-
-.chord-picker {
-	order: 2;
-	margin: 1rem 0 0;
-	text-align: center;
-	width: 100%;
-}
-
-.chord-picker__wrap {
-	display: inline-block;
+	height: 100%;
+	transform: rotateX(180deg);
+	transition:
+		fill 600ms cubic-bezier(0.29, 0.69, 0.34, 0.99),
+		transform 600ms cubic-bezier(0.29, 0.69, 0.34, 0.99);
 }
 
 /* App Container */
@@ -347,6 +382,14 @@ h6 {
 * Media XS
 */
 @media only screen and (min-width:400px) {
+	.menu-closed .app-main {
+		transform: translateY(-180px);
+	}
+
+	.header__banner {
+		padding: 1rem 8rem 1rem 1rem;
+	}
+
 	.guitar {
 		height: 170px;
 	}
@@ -362,20 +405,52 @@ h6 {
 }
 
 /*
+* Media SM and a half
+*/
+@media only screen and (min-width:450px) {
+	.menu-closed .app-main {
+		transform: translateY(-160px);
+	}
+	.header__banner {
+		padding: 1rem;
+	}
+
+	.menu-closed .menu-button {
+		transform: translateY(13px);
+	}
+}
+
+/*
 * Media SM
 */
 @media only screen and (min-width:600px) {
 	.app-main {
 		width: 90%;
 	}
-	
+
+	.menu-closed .app-main {
+		transform: translateY(-120px);
+	}
+
 	.header__title {
-		font-size: 2.4rem;
-		padding: 1.5rem 0;
+		font-size: 2.0rem;
+		text-align: center;
 	}
 
 	.menu {
 		flex-wrap: nowrap;
+	}
+
+	.menu__description {
+		padding-right: 4rem;
+	}
+
+	.menu-button {
+		right: 20px;
+	}
+
+	.menu-closed .menu-button {
+		transform: translateY(8px);
 	}
 
 	.chord-picker {
@@ -404,6 +479,15 @@ h6 {
 * Media MD
 */
 @media only screen and (min-width:800px) {
+	.menu-closed .app-main {
+		transform: translateY(-80px);
+	}
+	.header__title {
+		font-size: 2.4rem;
+	}
+	.menu-closed .menu-button {
+		transform: translateY(3px);
+	}
 	.piano {
 		height: 180px;
 	}
@@ -417,6 +501,9 @@ h6 {
 * Media LG
 */
 @media only screen and (min-width:900px) {
+	.menu-closed .app-main {
+		transform: translateY(-40px);
+	}
 	.piano {
 		height: 200px;
 	}

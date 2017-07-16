@@ -1,7 +1,6 @@
 import React from 'react';
 
 function Menu(props) {
-	const menuOpen = props.menuOpen ? '' : ' collapse';
 	const chords = props.chordData.chords;
 	const chordTypes = props.chordData.chordTypes;
 	const chordRoots = chords.map((chordGroup, index) => {
@@ -12,7 +11,7 @@ function Menu(props) {
 	});
 
 	return (
-		<section className={'menu-wrap' + menuOpen}>
+		<section className="menu-wrap" id="the-menu">
 			<div className="menu">
 				<div className="chord-picker">
 					<div className="chord-picker__wrap">
