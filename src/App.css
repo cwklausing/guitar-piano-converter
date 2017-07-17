@@ -45,6 +45,10 @@ body {
 	font-family: 'Open sans', sans-serif;
 }
 
+a:hover {
+	cursor: pointer;
+}
+
 h1,
 h2,
 h3,
@@ -376,6 +380,27 @@ h6 {
 
 .key-num-28 {
 	border-right: 1px solid black;
+}
+
+.footer {
+	background-color: #388ab3;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 1rem;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+.footer__text {
+	line-height: 1.4;
+}
+
+.footer__text a {
+	color: white;
 }
 
 /*

@@ -3,6 +3,7 @@ import Header from './Header';
 import Menu from './Menu';
 import Guitar from './Guitar';
 import Piano from './Piano';
+import Footer from './Footer';
 import chordData from './data/chords.json';
 import './App.css';
 
@@ -122,6 +123,7 @@ class App extends Component {
 							this.handleClick(rowNumber, noteNumber, instrument)}
 					/>
 				</main>
+				<Footer />
 			</div>
 		);
 	}
