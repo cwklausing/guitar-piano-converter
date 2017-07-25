@@ -21,7 +21,7 @@ class App extends Component {
 	}
 
 	handleClick(stringNumber, noteNumber, instrument) {
-		const notes = this.state.notes;
+		var notes = this.state.notes;
 		if (instrument === 'piano' && (stringNumber === 4 && noteNumber === 0) && (notes[4] === 0 || notes[3] === 4)) {
 			// Account for double B notes on guitar
 			if (notes[4] === 0) {
@@ -58,9 +58,9 @@ class App extends Component {
 	}
 
 	handleSelect(event) {
-		const name = event.target.name;
+		var name = event.target.name;
 		var value = event.target.value;
-		const selectedChord = this.state.selectedChord;
+		var selectedChord = this.state.selectedChord;
 
 		if (value === 'false') {
 			value = false;
@@ -80,9 +80,9 @@ class App extends Component {
 	}
 
 	setSelectedChord() {
-		const selectedRoot = this.state.selectedChord.root;
-		const selectedType = this.state.selectedChord.type;
-		const chords = chordData.chords;
+		var selectedRoot = this.state.selectedChord.root;
+		var selectedType = this.state.selectedChord.type;
+		var chords = chordData.chords;
 		var notes = this.state.notes;
 
 		if (selectedRoot && selectedType) {
@@ -99,7 +99,7 @@ class App extends Component {
 	}
 
 	render() {
-		const menuClass = this.state.menuOpen ? '' : ' menu-closed';
+		var menuClass = this.state.menuOpen ? '' : ' menu-closed';
 		return (
 			<div className={'App' + menuClass}>
 				<Header onMenuClick={() => this.handleMenuClick()} />

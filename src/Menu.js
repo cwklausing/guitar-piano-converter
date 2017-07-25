@@ -1,12 +1,12 @@
 import React from 'react';
 
 function Menu(props) {
-	const chords = props.chordData.chords;
-	const chordTypes = props.chordData.chordTypes;
-	const chordRoots = chords.map((chordGroup, index) => {
+	var chords = props.chordData.chords;
+	var chordTypes = props.chordData.chordTypes;
+	var chordRoots = chords.map((chordGroup, index) => {
 		return <option value={chordGroup['root']} key={index}>{chordGroup['root']}</option>;
 	});
-	const chordVariations = chordTypes.map((chordType, index) => {
+	var chordVariations = chordTypes.map((chordType, index) => {
 		return <option value={chordType} key={index}>{chordType}</option>;
 	});
 
