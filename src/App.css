@@ -384,14 +384,13 @@ h6 {
 
 .footer {
 	background-color: #388ab3;
+	box-sizing: border-box;
 	color: white;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
 	padding: 1rem;
-	position: fixed;
-	bottom: 0;
 	width: 100%;
 }
 
@@ -451,6 +450,12 @@ h6 {
 @media only screen and (min-width:600px) {
 	.app-main {
 		width: 90%;
+	}
+
+	.footer {
+		position: fixed;
+		bottom: 0;
+		left: 0;
 	}
 
 	.menu-closed .app-main {
